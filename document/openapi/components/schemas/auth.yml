@@ -1,0 +1,18 @@
+type: object
+required:
+  - access_token
+  - token_type
+  - expires_in
+properties:
+  access_token:
+    title: アクセストークン
+    type: string
+    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwibmFtZSI6ImFscGFjYSIsImlhdCI6MTUxNjIzOTAyMn0.fWaBXQKWg_nNhDKkcmrCbuLh3ec_VKniGqyD3gRIyWI
+  token_type:
+    title: トークンタイプ
+    type: string
+    example: bearer
+  expires_in:
+    title: 有効期限
+    type: number
+    example: 2592000

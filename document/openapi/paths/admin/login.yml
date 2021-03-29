@@ -1,0 +1,23 @@
+post:
+  tags:
+    - admin
+  summary: adminログイン
+  description: email と password でadminとしてログインするAPI(発行画面は一旦用意しない)
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/login.yml
+  responses:
+    200:
+      description: ログイン完了
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/auth.yml
+    401:
+      $ref: ../components/responses/unauthorized.yml
+    422:
+      $ref: ../components/responses/validation-error.yml
+    500:
+      $ref: ../components/responses/internal-server-error.yml

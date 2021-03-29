@@ -1,0 +1,11 @@
+description: バリデーションエラー
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          title: エラーメッセージ
+          type: string

@@ -1,0 +1,12 @@
+description: リクエスト成功
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          title: メッセージ
+          type: string
+          example: ok

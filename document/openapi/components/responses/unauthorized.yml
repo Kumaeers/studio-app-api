@@ -1,0 +1,11 @@
+description: 認証エラー
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          title: エラーメッセージ
+          type: string

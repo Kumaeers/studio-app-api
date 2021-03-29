@@ -1,0 +1,14 @@
+type: object
+required:
+  - email
+  - password
+properties:
+  email:
+    title: メールアドレス
+    type: string
+    format: email
+    example : manager01@example.com
+  password:
+    title: パスワード
+    type: string
+    example: password

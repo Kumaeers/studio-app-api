@@ -1,0 +1,7 @@
+get:
+  tags:
+    - admin
+  summary: "ヘルスチェック"
+  responses:
+    "200":
+      description: ok

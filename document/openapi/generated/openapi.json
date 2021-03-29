@@ -1,0 +1,38 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "studio-app APIs",
+    "version" : "0.1"
+  },
+  "servers" : [ {
+    "description" : "ローカルサーバ",
+    "url" : "http://localhost"
+  } ],
+  "tags" : [ {
+    "description" : "サポーター用API",
+    "name" : "supporter"
+  } ],
+  "paths" : {
+    "/health-check" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "description" : "ok"
+          }
+        },
+        "summary" : "ヘルスチェック",
+        "tags" : [ "admin" ]
+      }
+    }
+  },
+  "components" : {
+    "schemas" : { },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "bearerFormat" : "JWT",
+        "scheme" : "bearer",
+        "type" : "http"
+      }
+    }
+  }
+}
