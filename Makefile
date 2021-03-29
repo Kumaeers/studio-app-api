@@ -4,6 +4,9 @@ up:
 down:
 	docker-compose down
 
+create-project:
+	docker-compose exec app composer create-project --prefer-dist "laravel/laravel=6.*" .
+
 # dockerコンテナを初めて起動した場合に実行する
 app-init:
 	docker-compose exec app ash -c ' \

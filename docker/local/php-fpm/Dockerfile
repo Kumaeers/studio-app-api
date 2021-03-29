@@ -26,9 +26,6 @@ RUN docker-php-ext-install \
 
 COPY ${ROOT_DIR}/php.ini /usr/local/etc/php/php.ini
 
-RUN pecl install xdebug && docker-php-ext-enable xdebug
-COPY ${ROOT_DIR}/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
-
 RUN pecl install redis && docker-php-ext-enable redis
 
 RUN docker-php-ext-install gmp
