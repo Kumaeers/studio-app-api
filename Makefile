@@ -4,6 +4,9 @@ up:
 down:
 	docker-compose down
 
+build:
+	docker-compose build
+
 create-project:
 	docker-compose exec app composer create-project --prefer-dist "laravel/laravel=6.*" .
 
