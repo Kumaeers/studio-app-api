@@ -12,3 +12,7 @@
 */
 
 Route::get('health-check', 'HealthCheckController');
+
+Route::group(['namespace' => 'Manager', 'prefix' => 'manager', 'as' => 'manager.'], function () {
+    Route::post('login', 'AuthController@login')->name('login');
+});

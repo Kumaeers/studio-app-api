@@ -14,8 +14,10 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        // 'guard' => 'web',
+        // 'passwords' => 'users',
+        'guard' => 'manager',
+        'passwords' => 'managers',
     ],
 
     /*
@@ -36,14 +38,9 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
+        'manager' => [
+            'driver' => 'jwt',
+            'provider' => 'managers',
             'hash' => false,
         ],
     ],
@@ -70,11 +67,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'managers' => [
+            'driver' => 'eloquent',
+            'model' => App\Entities\Manager::class,
+        ],
     ],
 
     /*
@@ -93,6 +89,12 @@ return [
     */
 
     'passwords' => [
+        'managers' => [
+            'provider' => 'managers',
+            'table' => 'manager_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
